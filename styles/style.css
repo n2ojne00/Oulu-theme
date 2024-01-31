@@ -1,0 +1,287 @@
+
+#content {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 150px repeat(4,1fr);
+  grid-template-rows: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+  display: flex;
+  background-color: #faaf3c;
+  grid-column: 1/6;
+  border: black 2px solid;
+}
+header img {
+  float: left;
+  height: 80px;
+  padding: 8px;
+}
+
+nav h4 {
+  margin-top: 18px;
+  padding-left: 5px; 
+  line-height: 0;
+}
+nav {
+  background-color: #faaf3c;
+  font-size: 1.2em;
+  min-height: 150px;
+  width: 150px;
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+nav > a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  padding-left: 10px;
+}
+nav > a:hover {
+  background-color: #F05A23;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+}
+
+.brave {
+  background-image: url(../images/cat.jpg);
+  background-size: cover;
+  grid-column: 2/3;
+  border: 10px solid #faaf3c;
+  position: relative;
+}
+.brave:hover {
+  border: 10px solid #F05A23;
+}
+.intelligent {
+  background-image: url(../images/light.jpg);
+  background-size: cover;
+  grid-column: 3/4;
+  border: 10px solid #faaf3c;
+  position: relative;
+}
+.intelligent:hover {
+  border: 10px solid #008CFF; 
+}
+.fair {
+  background-image: url(../images/judge.jpg);
+  background-size: cover;
+  grid-column: 4/5;
+  border: 10px solid #faaf3c;
+  position: relative;
+}
+.fair:hover {
+  border: 10px solid #AA0000;
+}
+.responsible {
+  background-image: url(../images/eco.jpg);
+  background-size: cover;
+  grid-column: 5/6;
+  border: 10px solid #faaf3c;
+  position: relative;
+}
+.responsible:hover {
+  border: 10px solid #006E0A;
+}
+.brave, .intelligent, .fair, .responsible {
+  height: 200px;
+  box-sizing: border-box;
+  font-size: 1.4em;
+  text-decoration: none;
+  text-align: right;
+  padding-right: 10px;
+  color: white;
+  border-radius: 5px;
+}
+.brave::after {
+  content: "Brave";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f05a2377;
+  border: 1px solid #f05a23;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.4em;
+}
+.intelligent::after {
+  content: "Intelligent";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #008cff77;
+  border: 1px solid #008CFF;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.4em;
+}
+.fair::after {
+  content: "Fair";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #aa000077;
+  border: 1px solid #aa0000;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 5px;    
+  font-size: 1.4em;
+}
+.responsible::after {
+  content: "Responsible";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #006e0977;
+  border: 1px solid #006e09;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.4em;
+}
+
+header, nav, article, footer {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+article {
+  grid-column: 2/6;
+  padding-bottom: 15px;
+  text-align: justify;
+  padding: 15px 15px 15px 15px;
+  font-size: 1.2em;
+}
+article > a {
+  color: purple;
+}
+
+footer {
+  display: flex;
+  background-color: #faaf3c;
+  grid-column: 1/6;
+  grid-row: 4/5;
+  padding: 5px;
+  align-items: center;
+}
+footer div {
+  flex-grow: 5;
+  text-align: right;
+}
+footer img {
+  height: 80px;
+  margin: 10px;
+}
+
+table th, td {
+  text-align: left;
+  padding: 1px 5px 1px 5px;
+}
+/*------------------------------------------------------*/
+@media screen and (max-width: 1078px) {
+  ::after {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav {
+    grid-row: 2/7;
+  }
+  article {
+    text-align: left;
+    padding: 12px;
+    font-size: 1em;
+  }
+  .brave::before {
+    content: "Brave";
+    
+  }
+  .intelligent::before {
+    content: "Intelligent";
+  }
+  .fair::before {
+    content: "Fair";
+  }
+  .responsible::before {
+    content: "Responsible";
+  }
+  .brave, .intelligent, .fair, .responsible {
+    background: none;
+    background-color: #faaf3c;
+    border: 2px solid black;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    grid-column: 2/span 4;
+    height: fit-content;
+  }
+  .brave {
+    grid-row: 2/2;
+  }
+  .brave:hover { /*ORANSSI*/
+    background-color: #F05A23;
+    border: 2px solid #F05A23;
+  }
+  .intelligent {
+    grid-row: 3/3;
+  }
+  .intelligent:hover { /*SININEN*/
+    background-color: #F05A23;
+    border: 2px solid #008CFF;
+  }
+  .fair {
+    grid-row: 4/4;
+  }
+  .fair:hover { /*PUNAINEN*/
+    background-color:#F05A23;
+    border: 2px solid #AA0000;
+  }
+  .responsible {
+    grid-row: 5/5;
+  }
+  .responsible:hover { /*VIHREÄ*/
+    background-color: #F05A23;
+    border: 2px solid #006E0A;
+  }
+  
+  footer {
+    grid-row: 7/7;
+  }
+  footer img {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .brave, .intelligent, .fair, .responsible {
+    grid-column: 1/6;
+    background: none;
+    background-color: #faaf3c;
+  }
+nav {
+  display: none;
+ }
+ article {
+  grid-column: 1/6;
+  text-align: left;
+ }
+ .brave:hover {
+  background-color: #F05A23;
+  border-color: #F05A23;
+ }
+ .intelligent:hover {
+  background-color: #F05A23;
+  border-color: #008CFF;
+ } 
+ .fair:hover {
+  background-color:#F05A23;
+  border-color: #AA0000;
+ }
+ .responsible:hover {
+  background-color: #F05A23;
+  border-color: #006E0A;
+ }
+}
